@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" placeholder="Enter marks of javascript out of 100" id="sub1">
+        <input type="text" placeholder="Enter marks of c out of 100" id="sub2">
+        <input type="text" placeholder="Enter marks of php out of 100" id="sub3">
+        <input type="text" placeholder="Enter marks of Angualr out of 100" id="sub4">
+        <input type="text" placeholder="Enter marks of Laravel out of 100" id="sub5">
+        <button id="btn">Calculate</button>
+        <div id="msg"></div>
+    </div>
+    <script>
+        function CalculateMarks(){
+            var javascript =parseInt(document.getElementById("sub1").value);
+            var c = parseInt(document.getElementById("sub2").value);
+            var php = parseInt(document.getElementById("sub3").value);
+            var angular = parseInt(document.getElementById("sub4").value);
+            var laravel = parseInt(document.getElementById("sub5").value);
+            var totalMarks = javascript+c+php+angular+laravel;
+            var percentage = (totalMarks/500)*100;
+            var msg = "";
+            if(percentage>=80){
+                msg= totalMarks + " A Grade "+ percentage+"%";
+            }
+            else if(percentage>=60){
+                msg= totalMarks + " b Grade "+ percentage+"%";
+            }
+            else if(percentage>=45){
+                msg= totalMarks + " c Grade "+ percentage+"%";
+            }
+            else if(percentage>=33){
+                msg= totalMarks + " d Grade "+ percentage+"%";
+            }
+            else{
+                msg = "fail try next time";
+            }
+            document.getElementById("msg").innerHTML=msg;
+        }
+      document.getElementById("btn").addEventListener("click",CalculateMarks);
+    </script>
+</body>
+</html>

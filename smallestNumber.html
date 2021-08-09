@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" placeholder="Enter Your Number" id="text"><br>
+        <input type="text" placeholder="Enter Your Number" id="text1"><br>
+        <input type="text" placeholder="Enter Your Number" id="text2"><br>
+        <button id="btn">click</button>
+        <div id="msg"></div>
+    </div>
+    <script>
+        function Validate() {
+            var a = parseInt(document.getElementById("text").value);
+            var b = parseInt(document.getElementById("text1").value);
+            var c = parseInt(document.getElementById("text2").value);
+            var msg = ""
+            if (a <= b && a<=c) {
+                msg = a+ " Is smaller Number";
+            }else if(b <= a && b<=c){
+                msg = b+ " Is smaller Number";
+            }
+             else {
+                msg = c+ " Is smaller Number";
+            }
+            document.getElementById("msg").innerHTML = msg;
+        }
+        document.getElementById("btn").addEventListener("click", Validate);
+    </script>
+</body>
+
+</html>

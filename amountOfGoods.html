@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" placeholder="enter the Amount ?" id="amount">
+        <button id="btn">Price</button>
+        <div id="msg"></div>
+    </div>
+    <script>
+        function AmountOfGoods(){
+            var amount = parseInt(document.getElementById("amount").value);
+            var msg = "";
+            if(amount>=5000){
+               var valueNum= 30/100;
+               var totalAmount = amount - (amount*valueNum);
+               msg = amount+ "discount of 30% You Have to Pay "+ totalAmount;
+            }else if(amount>=3000){
+                var valueNum= 20/100;
+                var totalAmount = amount - (amount*valueNum);
+                msg = amount+ " discount of 20% You Have To Pay "+ totalAmount;
+            }else if(amount>=2000){
+                var valueNum= 15/100;
+                var totalAmount = amount - (amount*valueNum);
+                msg = amount+ " discount of 15% You Have To Pay "+ totalAmount;
+            }else {
+                msg = amount;
+            }
+            document.getElementById("msg").innerHTML= msg;
+        }
+        document.getElementById("btn").addEventListener("click", AmountOfGoods);
+    </script>
+</body>
+</html>
